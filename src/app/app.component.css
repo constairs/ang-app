@@ -1,0 +1,35 @@
+body {
+  font-family: Arial;
+  font-size: 16px;
+}
+
+a {
+  color: #000000;
+  font-family: Arial;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  font-family: Arial;
+}
+
+.item-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author {
+  color: #c0c0c0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.notEmpty {
+  color: green;
+}

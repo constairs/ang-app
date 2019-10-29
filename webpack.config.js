@@ -15,7 +15,7 @@ module.exports = {
   },
    module:{
        rules:[
-           {
+            {
                test: /\.ts$/,
                use: [
                 {
@@ -24,7 +24,19 @@ module.exports = {
                   } ,
                    'angular2-template-loader'
                ]
-            }
+            },
+            {
+              test: /\.html$/,
+              loader: 'html-loader'
+            },
+            {
+              test: /\.css$/,
+              include: path.resolve(__dirname, 'src/app'),
+              use: [
+                'to-string-loader',
+                'css-loader'
+              ],
+            },
        ]
    },
    plugins: [

@@ -1,0 +1,14 @@
+<div class="container">
+  <p class="item-top">
+    <span class="author">{{ item.by }}</span>
+    <span class="date">{{ getDateString(item.time) }}</span>
+  </p>
+  <p>{{ item.type }}</p>
+  <h2><a [href]="item.url">{{ item.title }}</a></h2>
+
+  <p [class.notEmpty]="name">Name: {{ name }}</p>
+
+  <input type="text" [(ngModel)]="name" />
+
+  <child-comp></child-comp>
+</div>

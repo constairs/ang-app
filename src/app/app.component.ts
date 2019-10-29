@@ -15,19 +15,12 @@ class Item {
 
 @Component({
   selector: 'app',
-  template: `
-              <div>
-                <p>
-                  <span>{{ item.by }}</span>
-                  <span>{{ getDateString(item.time) }}</span>
-                </p>
-                <p>{{ item.type }}</p>
-                <h2><a [href]="item.url">{{ item.title }}</a></h2>
-              </div>
-            `,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   item: any;
+  name: string = '';
 
   constructor(private http: HttpClient) {}
 
