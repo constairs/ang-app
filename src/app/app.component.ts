@@ -21,6 +21,10 @@ class Item {
 export class AppComponent implements OnInit {
   item: any;
   name: string = '';
+  age: number;
+  isUnknown: boolean = false;
+
+  text: string = '';
 
   constructor(private http: HttpClient) {}
 
@@ -38,5 +42,9 @@ export class AppComponent implements OnInit {
     const month = dateObj.getUTCMonth() < 10 ? '0' + (dateObj.getUTCMonth() + 1) : dateObj.getUTCMonth() + 1;
     const year = dateObj.getUTCFullYear();
     return `${date}.${month}.${year}`;
+  }
+
+  onChange(checked: boolean) {
+    this.isUnknown = checked;
   }
 }

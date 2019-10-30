@@ -9,6 +9,18 @@
   <p [class.notEmpty]="name">Name: {{ name }}</p>
 
   <input type="text" [(ngModel)]="name" />
+  <input type="number" [(ngModel)]="age" />
 
-  <child-comp></child-comp>
+  <checkbox
+    id="meh"
+    [checked]="isUnknown"
+    (onChange)="onChange($event)"
+  ></checkbox>
+
+  <input-field [(textData)]="text"></input-field>
+
+  <child-comp [title]="name" [userAge]="age" [isUnknown]="isUnknown"></child-comp>
+
+
+  <p>Text: {{ text }}</p>
 </div>
