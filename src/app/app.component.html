@@ -21,6 +21,21 @@
 
   <child-comp [title]="name" [userAge]="age" [isUnknown]="isUnknown"></child-comp>
 
+  <!-- use template variables -->
+  <counter #counter></counter>
+  <button (click)="counter.increment()">+</button>
+  <button (click)="counter.decrement()">-</button>
+
+  <!-- use viewChild -->
+  <counter-comp></counter-comp>
+  <button (click)="increment()">+</button>
+  <button (click)="decrement()">-</button>
+
 
   <p>Text: {{ text }}</p>
+
+  <!-- use ContentChild -->
+  <content-child>
+    <h3 #headerContent>welcome {{ greetingName }}!</h3>
+  </content-child>
 </div>

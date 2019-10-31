@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CounterComponent2 } from './counter2.component';
 
 class Item {
   by: string;
@@ -23,10 +24,21 @@ export class AppComponent implements OnInit {
   name: string = '';
   age: number;
   isUnknown: boolean = false;
+  greetingName: string = 'visitor';
 
   text: string = '';
 
   constructor(private http: HttpClient) {}
+
+
+  @ViewChild(CounterComponent2, { static: false })
+  private counterComponent: CounterComponent2;
+  increment() {
+    this.counterComponent.increment();
+  }
+  decrement() {
+    this.counterComponent.decrement();
+  }
 
   ngOnInit() {
     const testUrl = 'https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty';
