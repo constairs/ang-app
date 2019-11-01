@@ -1,7 +1,7 @@
 <div class="container">
   <p class="item-top">
-    <span class="author">{{ item.by }}</span>
-    <span class="date">{{ getDateString(item.time) }}</span>
+    <span bold class="author">{{ item.by }}</span>
+    <span bold class="date">{{ getDateString(item.time) }}</span>
   </p>
   <p>{{ item.type }}</p>
   <h2><a [href]="item.url">{{ item.title }}</a></h2>
@@ -38,4 +38,6 @@
   <content-child>
     <h3 #headerContent>welcome {{ greetingName }}!</h3>
   </content-child>
+
+  <data-comp></data-comp>
 </div>

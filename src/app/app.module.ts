@@ -8,11 +8,18 @@ import { InputComponent } from './input.component';
 import { CounterComponent } from './counter.component';
 import { CounterComponent2 } from './counter2.component';
 import { ContentChildComponent } from './content-child.component';
+import { DataModule } from './data/data.module';
+import { BoldDirective } from './bold.directive';
 
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule, HttpClientModule ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    DataModule
+  ],
   declarations: [
     AppComponent, 
     CheckboxComponent,
@@ -21,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CounterComponent,
     CounterComponent2,
     ContentChildComponent,
+    BoldDirective,
   ],
   bootstrap: [ AppComponent ],
 })
