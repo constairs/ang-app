@@ -10,6 +10,8 @@ import { CounterComponent2 } from './counter2.component';
 import { ContentChildComponent } from './content-child.component';
 import { DataModule } from './data/data.module';
 import { BoldDirective } from './bold.directive';
+import { ItalicDirective } from './italic.directive';
+import { UnderlineDirective } from './underline.directive';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     CounterComponent2,
     ContentChildComponent,
     BoldDirective,
+    ItalicDirective,
+    UnderlineDirective,
   ],
   bootstrap: [ AppComponent ],
 })
