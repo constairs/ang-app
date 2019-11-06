@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CounterComponent2 } from './counter2.component';
+import { UserService } from './users.service';
+import { User } from './user';
 
 class Item {
   by: string;
@@ -27,8 +29,9 @@ export class AppComponent implements OnInit {
   greetingName: string = 'visitor';
 
   text: string = '';
+  users: User[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private userService: UserService) {}
 
 
   @ViewChild(CounterComponent2, { static: false })
@@ -45,7 +48,9 @@ export class AppComponent implements OnInit {
     this.http.get(testUrl).subscribe((data) => {
       console.log(data);
       this.item = data;
-    })
+    });
+
+    // this.userService.getUsers().subscribe(data => this.users = data);
   }
 
   getDateString(time: number): string {

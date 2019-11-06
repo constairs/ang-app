@@ -43,4 +43,11 @@
 
   <p italic>test italic  directive</p>
   <p underline>test underline directive</p>
+
+  <ul>
+    <li *ngFor="let user of users">
+      <span>{{ user?.name }}</span>
+      <span>{{ user?.age }}</span>
+    </li>
+  </ul>
 </div>
