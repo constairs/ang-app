@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CounterComponent2 } from './counter2.component';
-import { UserService } from './users.service';
+import { UsersService } from './users.service';
 import { User } from './user';
 
 class Item {
@@ -20,6 +20,7 @@ class Item {
   selector: 'app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [ UsersService ],
 })
 export class AppComponent implements OnInit {
   item: any;
@@ -31,7 +32,7 @@ export class AppComponent implements OnInit {
   text: string = '';
   users: User[] = [];
 
-  constructor(private http: HttpClient, private userService: UserService) {}
+  constructor(private http: HttpClient, private usersService: UsersService) {}
 
 
   @ViewChild(CounterComponent2, { static: false })
@@ -50,7 +51,7 @@ export class AppComponent implements OnInit {
       this.item = data;
     });
 
-    // this.userService.getUsers().subscribe(data => this.users = data);
+    this.usersService.getUsers().subscribe(data => this.users = data);
   }
 
   getDateString(time: number): string {

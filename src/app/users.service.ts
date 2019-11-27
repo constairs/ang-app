@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class UserService {
+export class UsersService {
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {

@@ -12,6 +12,7 @@ import { DataModule } from './data/data.module';
 import { BoldDirective } from './bold.directive';
 import { ItalicDirective } from './italic.directive';
 import { UnderlineDirective } from './underline.directive';
+import { UsersService } from './users.service';
 
 import { HttpClientModule } from '@angular/common/http';
 
